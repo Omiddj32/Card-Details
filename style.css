@@ -1,0 +1,310 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Vazir';
+  color: #000000;
+  background-color: #f3f3f3;
+  height: 100vh;
+  overflow: hidden;
+}
+
+input {
+  border: ridge whitesmoke 3px;
+  border-radius: 5px;
+}
+
+.text {
+  font-size: 71.5%;
+  margin-bottom: 0.4rem;
+}
+
+.form {
+  width: 21rem;
+  position: absolute;
+  left: 45rem;
+  bottom: 7rem;
+}
+
+.background__img {
+  width: 30rem;
+  height: 100%;
+  position: fixed;
+  background: url(./images/bg-main-desktop.png) 0 40% / cover no-repeat
+    border-box fixed;
+}
+
+.card__front__img {
+  width: 24rem;
+  margin-left: 11rem;
+  margin-top: 8rem;
+  position: fixed;
+}
+
+.icon__front {
+  position: relative;
+  top: 9.5rem;
+  margin-left: 12.5rem;
+}
+
+.front__info {
+  font-family: system-ui;
+  font-size: xx-large;
+  position: relative;
+  top: 13.8rem;
+  color: aliceblue;
+  margin-left: -4.3rem;
+  display: inline-block;
+}
+
+.front__name {
+  font-family: system-ui;
+  font-size: medium;
+  position: relative;
+  top: 14rem;
+  color: aliceblue;
+  margin-left: 13rem;
+}
+
+.front__date {
+  font-family: system-ui;
+  font-size: small;
+  position: relative;
+  top: 15.25rem;
+  color: aliceblue;
+  margin-left: 31rem;
+}
+
+.card__back__img {
+  width: 24rem;
+  position: relative;
+  margin-left: 17rem;
+  top: 17rem;
+}
+
+.login__input {
+  display: inline-block;
+  width: 100%;
+  padding: 0.8rem 6.5rem 0.8rem 0.4rem;
+}
+
+.login__label {
+  margin: auto;
+  margin-bottom: 1rem;
+}
+
+.login__text {
+  display: block;
+}
+
+.date__text {
+  display: inline-block;
+}
+
+.date__input {
+  width: calc(30% - 1rem);
+  padding: 0.5rem 1rem 0.5rem 0.3rem;
+}
+
+span.front__month--card {
+  margin-right: 0.2rem;
+}
+
+.cvc__text {
+  margin-left: 4.9rem;
+}
+
+.cvc__input {
+  width: calc(46.9% - 1rem);
+  padding: 0.5rem 1rem 0.5rem 0.3rem;
+  margin-left: 1rem;
+}
+
+.cvc__info {
+  font-size: large;
+  position: relative;
+  top: 9rem;
+  color: aliceblue;
+  margin-left: 36rem;
+}
+
+.btn {
+  padding: 0.8rem 8.93rem;
+  margin-top: 1rem;
+  background: #022849;
+  color: white;
+  border: ridge #022849 3px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.errText {
+  color: #f52222;
+  margin: 0.2rem 0 0 0.5rem;
+  font-size: 74.5%;
+}
+
+.empty__error3 {
+  position: relative;
+  top: 0.1rem;
+  display: inline;
+}
+
+.empty__error4 {
+  position: relative;
+  margin-left: 7rem;
+  display: inline;
+  top: 0.1rem;
+}
+
+.newEmptErr4 {
+  margin-left: 12.5rem;
+}
+
+.confirmed {
+  width: 21rem;
+  position: absolute;
+  left: 45rem;
+  bottom: 7rem;
+}
+
+.confirm__icon {
+  margin-left: 8rem;
+  margin-bottom: 1.5rem;
+}
+
+.confirm__text {
+  margin-left: 4.7rem;
+  font-size: xx-large;
+}
+
+.confirm__msg {
+  color: #868686;
+  margin: 0.6rem 0 1.5rem 2.5rem;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .form {
+    bottom: 4rem;
+  }
+}
+
+@media (max-width: 500px) {
+  body {
+    overflow: auto;
+  }
+  .background__img {
+    height: 14rem;
+    width: 100%;
+  }
+  .form {
+    width: 20rem;
+    position: absolute;
+    left: 3rem;
+    top: 23rem;
+    bottom: auto;
+  }
+  .confirmed {
+    width: 20rem;
+    position: absolute;
+    left: 3rem;
+    top: 23rem;
+    bottom: auto;
+  }
+  .card__front__img {
+    width: 22rem;
+    margin-left: 2rem;
+    margin-top: 8rem;
+    position: absolute;
+  }
+  .front__info {
+    font-size: xx-large;
+    position: relative;
+    top: 10.4rem;
+    left: 3.5rem;
+    display: block;
+    margin-left: 0;
+  }
+  .front__name {
+    font-size: small;
+    position: relative;
+    top: 10.8rem;
+    margin-left: 3.2rem;
+    display: block;
+  }
+  .front__date {
+    font-size: small;
+    position: relative;
+    top: 11.9rem;
+    margin-left: 20rem;
+    display: block;
+  }
+  .icon__front {
+    position: relative;
+    top: 8.5rem;
+    margin-left: 2.5rem;
+  }
+  .card__back__img {
+    font-size: large;
+    position: relative;
+    top: -11.1rem;
+    margin-left: 3rem;
+    transform: skewY(8deg);
+    display: block;
+    width: 22rem;
+  }
+  .cvc__info {
+    font-size: large;
+    position: relative;
+    top: -17rem;
+    margin-left: 0rem;
+    transform: skewY(8deg);
+    display: inline-block;
+    left: 20.5rem;
+  }
+  .btn {
+    margin-bottom: 1rem;
+    padding: 0.8rem 8.4rem;
+  }
+}
+
+@media (max-width: 362px) {
+  .front__name {
+    font-size: small;
+    position: relative;
+    top: 9.4rem;
+    margin-left: 3.2rem;
+  }
+  .front__date {
+    font-size: small;
+    position: relative;
+    top: 11.9rem;
+    margin-left: 20rem;
+    display: ruby-text;
+  }
+}
+
+@media (min-width: 2140px) {
+  .form {
+    bottom: 70rem;
+  }
+  .confirmed {
+    bottom: 70rem;
+  }
+}
+
+@media (min-width: 2440px) {
+  .form {
+    bottom: 80rem;
+  }
+  .confirmed {
+    bottom: 80rem;
+  }
+}

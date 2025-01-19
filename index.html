@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card Details</title>
+    <link rel="stylesheet" href="./fonts/vazir.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="./images/bg-card-back.png"
+    />
+  </head>
+  <body>
+    <form action="#" class="form">
+      <div class="login__label">
+        <label for="name">
+          <span class="login__text text"> CARD HOLDER NAME</span>
+          <input
+            type="text"
+            placeholder="e.g. Jane Appleseed"
+            class="login__input login__input--name"
+          />
+          <div class="empty__error1 errText hidden">Can't be blank</div>
+        </label>
+      </div>
+      <div class="login__label">
+        <label for="card">
+          <span class="login__text text"> CARD NUMBER</span>
+          <input
+            type="text"
+            placeholder="e.g. 1234 5678 9123 0000"
+            maxlength="16"
+            class="login__input login__input--idCard"
+          />
+          <div class="empty__error2 errText hidden">Can't be blank</div>
+          <div class="number__error1 errText hidden">
+            wrong format, numbers only
+          </div>
+        </label>
+      </div>
+      <div class="date__label cvc__label">
+        <span class="date__text text"> EXP. DATE (MM / YY)</span>
+        <span class="cvc__text text"> CVC</span>
+        <br />
+        <label for="date">
+          <input
+            type="text"
+            placeholder="MM"
+            maxlength="2"
+            class="date__input date__input--month"
+          />
+          <input
+            type="text"
+            placeholder="YY"
+            maxlength="2"
+            class="date__input date__input--year"
+          />
+        </label>
+        <label for="CVC">
+          <input
+            type="text"
+            placeholder="e.g. 123"
+            maxlength="3"
+            class="cvc__input cvc__input--idCard"
+          />
+          <div class="empty__error3 errText hidden">Can't be blank</div>
+          <div class="empty__error4 errText hidden">Can't be blank</div>
+        </label>
+      </div>
+      <button class="btn btn__confirm">Confirm</button>
+    </form>
+
+    <main>
+      <div class="background__header">
+        <img
+          src="./images/bg-main-desktop.png"
+          alt="background image"
+          class="background__img"
+        />
+      </div>
+      <div class="front-card">
+        <picture
+          ><img
+            src="./images/bg-card-front.png"
+            alt="front-card image"
+            class="card__front__img"
+        /></picture>
+        <img
+          src="./images/card-logo.svg"
+          alt="front-card icon"
+          class="icon__front"
+        />
+        <div class="front__info front__number--card">0000 0000 0000 0000</div>
+        <div class="front__date">
+          <span class="front__month--card">00 /</span
+          ><span class="front__year--card">00</span>
+        </div>
+        <div class="front__name front__name--card">JANE APPLESEED</div>
+      </div>
+      <div class="back-card">
+        <picture
+          ><img
+            src="./images/bg-card-back.png"
+            alt="back-card image"
+            class="card__back__img"
+        /></picture>
+        <div class="cvc__info back__cvc--card">000</div>
+      </div>
+    </main>
+
+    <div class="confirmed hidden">
+      <img
+        src="./images/icon-complete.svg"
+        alt="confirm icon"
+        class="confirm__icon"
+      />
+      <div class="confirm__text">THANK YOU!</div>
+      <div class="confirm__msg">We've added your credit card details</div>
+      <button class="btn continue__btn">Continue</button>
+    </div>
+    <!-- <footer>
+      &copy; by Omid Jahangiri. Don't claim as your own ;)
+    </footer> -->
+    <script src="script.js"></script>
+  </body>
+</html>
