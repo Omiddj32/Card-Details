@@ -1,5 +1,6 @@
 'use strict';
 
+// Form information
 const form = document.querySelector('form');
 const confirmedForm = document.querySelector('.confirmed');
 const holderName = document.querySelector('.login__input--name');
@@ -10,17 +11,25 @@ const cardCvc = document.querySelector('.cvc__input--idCard');
 const btnConfirm = document.querySelector('.btn__confirm');
 const btnContinue = document.querySelector('.continue__btn');
 
+// Card information
 const cardNameText = document.querySelector('.front__name--card');
 const cardNumberText = document.querySelector('.front__number--card');
 const cardMonthText = document.querySelector('.front__month--card');
 const cardYearText = document.querySelector('.front__year--card');
 const cardCvcText = document.querySelector('.back__cvc--card');
 
+// Errors
 const blankError1 = document.querySelector('.empty__error1');
 const blankError2 = document.querySelector('.empty__error2');
 const blankError3 = document.querySelector('.empty__error3');
 const blankError4 = document.querySelector('.empty__error4');
-const wrongFormatError1 = document.querySelector('.number__error1');
+const lengthError2 = document.querySelector('.length__error2');
+const lengthError3 = document.querySelector('.length__error3');
+const lengthError4 = document.querySelector('.length__error4');
+const wrongFormatError1 = document.querySelector('.format__error1');
+const wrongFormatError2 = document.querySelector('.format__error2');
+const wrongFormatError3 = document.querySelector('.format__error3');
+const wrongFormatError4 = document.querySelector('.format__error4');
 
 const account = {
   owner: 'Jane Appleseed',
@@ -56,6 +65,7 @@ const createCardDate = function (acc) {
   console.log(formattedMonth);
 };
 
+// Card section
 holderName.addEventListener('input', function () {
   if (holderName.value.length > 25)
     holderName.value = holderName.value.slice(0, 25);
@@ -109,44 +119,94 @@ expiryYear.addEventListener('input', function () {
   }
 });
 
+// Error section
 const confirmedOrNot = function (errorExist = true) {
   if (errorExist) {
-    const editCardNum = [Number(cardNumber.value)];
+    let editCardNum = [Number(cardNumber.value)];
+    let checkLength = cardNumber.value.length;
+
+    // format err
     if (!Number(editCardNum[0])) {
-      wrongFormatError1.classList.remove('hidden');
+      wrongFormatError2.classList.remove('hidden');
       errorExist = true;
     } else {
-      wrongFormatError1.classList.add('hidden');
+      wrongFormatError2.classList.add('hidden');
+      errorExist = false;
+    }
+    editCardNum = [Number(cardCvc.value)];
+    if (!Number(editCardNum[0])) {
+      wrongFormatError4.classList.remove('hidden');
+      errorExist = true;
+    } else {
+      wrongFormatError4.classList.add('hidden');
+      errorExist = false;
+    }
+    editCardNum = [Number(expiryMonth.value)];
+    let editCardNumYear = [Number(expiryYear.value)];
+    if (!Number(editCardNum[0]) || !Number(editCardNumYear[0])) {
+      wrongFormatError3.classList.remove('hidden');
+      errorExist = true;
+    } else {
+      wrongFormatError3.classList.add('hidden');
       errorExist = false;
     }
 
+    // length err
+    if (checkLength !== 16) {
+      lengthError2.classList.remove('hidden');
+      errorExist = true;
+    } else {
+      lengthError2.classList.add('hidden');
+      errorExist = false;
+    }
+    checkLength = cardCvc.value.length;
+    if (checkLength !== 3) {
+      lengthError4.classList.remove('hidden');
+      errorExist = true;
+    } else {
+      lengthError4.classList.add('hidden');
+      errorExist = false;
+    }
+    let checkLengthYear = expiryYear.value.length;
+    checkLength = expiryMonth.value.length;
+    if (checkLength !== 2 || checkLengthYear !== 2) {
+      lengthError3.classList.remove('hidden');
+      errorExist = true;
+    } else {
+      lengthError3.classList.add('hidden');
+      errorExist = false;
+    }
+
+    // empty err
     if (!holderName.value) {
       blankError1.classList.remove('hidden');
     } else {
       blankError1.classList.add('hidden');
     }
-
     if (!cardNumber.value) {
       blankError2.classList.remove('hidden');
-      wrongFormatError1.classList.add('hidden');
+      wrongFormatError2.classList.add('hidden');
+      lengthError2.classList.add('hidden');
     } else {
       blankError2.classList.add('hidden');
     }
-
     if (!expiryMonth.value || !expiryYear.value) {
       blankError3.classList.remove('hidden');
       blankError4.classList.remove('newEmptErr4');
+      wrongFormatError3.classList.add('hidden');
+      lengthError3.classList.add('hidden');
     } else {
       blankError3.classList.add('hidden');
-      blankError4.classList.add('newEmptErr4');
     }
-
     if (!cardCvc.value) {
       blankError4.classList.remove('hidden');
+      wrongFormatError4.classList.add('hidden');
+      lengthError4.classList.add('hidden');
     } else {
       blankError4.classList.add('hidden');
     }
 
+    // err exist or not
     if (
       holderName.value &&
       cardNumber.value &&

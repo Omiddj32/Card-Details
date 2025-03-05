@@ -23,6 +23,9 @@
             class="login__input login__input--name"
           />
           <div class="empty__error1 errText hidden">Can't be blank</div>
+          <div class="format__error1 errText hidden">
+            wrong format, string only
+          </div>
         </label>
       </div>
       <div class="login__label">
@@ -35,8 +38,11 @@
             class="login__input login__input--idCard"
           />
           <div class="empty__error2 errText hidden">Can't be blank</div>
-          <div class="number__error1 errText hidden">
+          <div class="format__error2 errText hidden">
             wrong format, numbers only
+          </div>
+          <div class="length__error2 hidden errText">
+            You should enter 16 numbers
           </div>
         </label>
       </div>
@@ -65,8 +71,24 @@
             maxlength="3"
             class="cvc__input cvc__input--idCard"
           />
-          <div class="empty__error3 errText hidden">Can't be blank</div>
-          <div class="empty__error4 errText hidden">Can't be blank</div>
+          <div class="empty__error3 errText hidden edited__error3">
+            Can't be blank
+          </div>
+          <div class="format__error3 errText hidden edited__error3">
+            wrong format, numbers only
+          </div>
+          <div class="length__error3 errText hidden edited__error3">
+            You should enter 2 numbers
+          </div>
+          <div class="empty__error4 errText hidden edited__error4">
+            Can't be blank
+          </div>
+          <div class="format__error4 errText hidden edited__error4">
+            wrong format, numbers only
+          </div>
+          <div class="length__error4 errText hidden edited__error4">
+            You should enter 3 numbers
+          </div>
         </label>
       </div>
       <button class="btn btn__confirm">Confirm</button>

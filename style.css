@@ -147,17 +147,23 @@ span.front__month--card {
   font-size: 74.5%;
 }
 
-.empty__error3 {
-  position: relative;
-  top: 0.1rem;
-  display: inline;
+.empty__error4 {
+  margin-right: 3.8rem;
 }
 
-.empty__error4 {
-  position: relative;
-  margin-left: 7rem;
-  display: inline;
-  top: 0.1rem;
+.edited__error3 {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+  position: absolute;
+}
+
+.edited__error4 {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
 }
 
 .newEmptErr4 {
