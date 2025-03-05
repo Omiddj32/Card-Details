@@ -133,6 +133,14 @@ const confirmedOrNot = function (errorExist = true) {
       wrongFormatError2.classList.add('hidden');
       errorExist = false;
     }
+    editCardNum = [Number(holderName.value)];
+    if (!Number(editCardNum[0])) {
+      wrongFormatError1.classList.add('hidden');
+      errorExist = false;
+    } else {
+      wrongFormatError1.classList.remove('hidden');
+      errorExist = true;
+    }
     editCardNum = [Number(cardCvc.value)];
     if (!Number(editCardNum[0])) {
       wrongFormatError4.classList.remove('hidden');
